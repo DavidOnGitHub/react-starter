@@ -1,0 +1,78 @@
+{
+  "name": "react-starter",
+  "version": "1.0.0",
+  "description": "React Starter",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-react": "^6.16.0",
+    "classnames": "^2.2.5",
+    "express": "^4.14.0",
+    "file-loader": "^1.1.6",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.9",
+    "prop-types": "^15.6.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.6.0",
+    "redux-form": "^7.2.0",
+    "redux-thunk": "^2.1.0",
+    "webpack": "^2.1.0-beta.25"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^8.0.2",
+    "babel-jest": "^18.0.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.6.1",
+    "copy-webpack-plugin": "^4.2.0",
+    "css-loader": "^0.26.1",
+    "enzyme": "^2.7.0",
+    "eslint": "^4.15.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-class-property": "^1.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "jest": "^18.1.0",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.0",
+    "postcss": "^6.0.14",
+    "postcss-cssnext": "^3.0.2",
+    "react-addons-test-utils": "^15.4.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.6.2",
+    "webpack-babel-jest": "^1.0.4",
+    "webpack-dev-server": "^2.9.7"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "npm run clean && webpack --progress -p",
+    "nodemon": "node_modules/.bin/nodemon server.js --exec babel-node --watch build/bundle.js",
+    "lint": "node_modules/.bin/eslint --ext .js --ext .jsx src",
+    "start": "webpack-dev-server --progress --history-api-fallback --hot --inline --port 9000",
+    "clean": "rimraf ./build",
+    "prod": "npm run build && node server.js"
+  },
+  "jest": {
+    "setupFiles": [
+      "./src/jestSetup.js"
+    ],
+    "transform": {
+      "^.+\\.(jsx?)$": "<rootDir>/node_modules/webpack-babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ]
+  },
+  "author": "David Dai"
+}
