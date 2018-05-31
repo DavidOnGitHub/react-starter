@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Main from '../views/Main';
+import Dashboard from '../views/Dashboard';
 
 export const RootRoutes = () => (
   <Switch>
-    <Route path="/" component={Main} />
+    <Route path="/" component={Dashboard} />
   </Switch>
 );
